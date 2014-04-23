@@ -24,7 +24,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
 		data<-read.csv(paste(c(directory,"/",idForFile[i],".csv"),collapse=""))
 		if (pollutant=="sulfate") {polVect<-data$sulfate}
 		else if (pollutant=="nitrate") {polVect<-data$nitrate}
-		else {polVect<-vector(NA,lenth=data$Date)}
+		else {polVect<-vector(NA,length=length(data$Date))}
 		allNum<-c(allNum,polVect)
 		allNum<-allNum[!is.na(allNum)]
 	}
